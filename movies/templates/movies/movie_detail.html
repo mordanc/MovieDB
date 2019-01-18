@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <title>Film Focus</title>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    <link href="{% static 'movies/stylesheet.css' %}" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+    <header>
+        <h1 class="web-name">Film Focus</h1>
+    </header>
+    <nav>
+        <a href="{% url 'movies:movie_index' %}">Home</a> &nbsp;
+        <a href="{% url 'movies:movie_index' %}">Movies</a> &nbsp;
+        <a href="{% url 'movies:tag_index' %}">Tags</a> &nbsp;
+        <input type="button" style="float: right;" value="Search">
+        <input type="search" style="float: right;">
+
+    </nav>
+    <hr>
+
+    <div id="title">
+            <h2>{{ movie.movie_title }} <small>({{ movie.release_date }})</small></h2>
+            <h5>Tags: &nbsp; {% for tag in movie.tag_set.all %} <a href="{% url 'movies:tag_detail' tag.id %}">{{ tag.tag_name }}</a> &nbsp; {% endfor %}</h5>
+        </div>
+    
+        <!-- Tab links -->
+        <div class="tab">
+            <button class="tablinks" onclick="openTab(event, 'Summary')" id="defaultTab">Summary</button>
+            <button class="tablinks" onclick="openTab(event, 'Cast')">Cast</button>
+            <button class="tablinks" onclick="openTab(event, 'Discussion')">Discussion</button>
+            <button class="tablinks" onclick="openTab(event, 'Trivia')">Trivia</button>
+        </div>
+    
+    
+        <!-- Tab content -->
+        <div id="Summary" class="tabcontent">
+            <h3>Summary</h3>
+            <p>{{ movie.movie_summary }}</p>
+        </div>
+    
+        <div id="Cast" class="tabcontent">
+            <h3>Cast</h3>
+            <ul>
+                {% for actor in movie.actor_set.all %}
+                <li>{{ actor.actor_name }} </li>
+                {% endfor %}
+            </ul>
+        </div>
+    
+        <div id="Discussion" class="tabcontent">
+            <h3>Discussion</h3>
+            <p>This is a message board for this movie.</p>
+        </div>
+    
+        <div id="Trivia" class="tabcontent">
+            <h3>Trivia</h3>
+            <p>This is some movie trivia</p>
+        </div>
+
+
+    <script src="{% static 'movies/functions.js' %}"></script>
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <title>Film Focus</title>
+    <meta charset="utf-8">
+
+
+
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    <link href="{% static 'movies/stylesheet.css' %}" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+    <header>
+        <h1 class="web-name">Film Focus</h1>
+    </header>
+    <nav>
+        <a href="{% url 'movies:movie_index' %}">Home</a> &nbsp;
+        <a href="{% url 'movies:movie_index' %}">Movies</a> &nbsp;
+        <a href="{% url 'movies:tag_index' %}">Tags</a> &nbsp;
+        <input type="button" style="float: right;" value="Search">
+        <input type="search" style="float: right;">
+
+    </nav>
+    <hr>
+    <h1>Movies tagged with '{{ tag.tag_name }}'</h1>
+    <ul>
+        {% for movie in tag.movie.all %}
+            <li><a href="{% url 'movies:movie_detail' movie.id %}">{{ movie }}</a></li>
+        {% endfor %}
+    </ul>
+
+    <script src="{% static 'functions.js' %}"></script>
+
+
+</body>
+
+
+</html>
