@@ -10,31 +10,39 @@
     <link href="{% static 'movies/stylesheet.css' %}" rel="stylesheet" type="text/css">
 </head>
 
-<body>
-    <header>
+<body class="container">
+    <header class="item-a">
         <h1 class="web-name">Film Focus</h1>
-    </header>
+    
     <nav>
         <a href="{% url 'movies:movie_index' %}">Home</a> &nbsp;
         <a href="{% url 'movies:movie_index' %}">Movies</a> &nbsp;
         <a href="{% url 'movies:tag_index' %}">Tags</a> &nbsp;
-        <button style="float: right; background-color: rgb(31,32,33); color: #53a1b3; cursor: pointer;">Search</button>
-        <input type="search" style="float: right; background-color: rgb(31,32,33); color: #53a1b3; border: 1px solid #53a1b3;">
+
+        <form id="searchform" action="{% url 'movies:search_results' %}" method="GET" accept-charset="utf-8">
+                <button class="searchbutton" type="submit" style="float: right; background-color: rgb(31,32,33); color: #53a1b3; cursor: pointer;">Search</button>
+                <input class="searchfield" id="searchbox" name="q" type="text" id="search_bar"
+                    placeholder="Search..." style="float: right; background-color: rgb(31,32,33); color: #53a1b3; border: 1px solid #53a1b3;">
+        </form>
 
     </nav>
+</header>
     <hr>
-
-    {% if movies_list %}
     
-        {% for movie in movies_list %}
-            <div id="title" style="padding: 6px 12px;border: 1px solid #53a1b3;">
-                <h2><a href="{% url 'movies:movie_detail' movie.id %}">{{ movie.movie_title }}</a> <small>({{ movie.release_date.year }})</small></h2>
-                <h5>Tags: &nbsp; {% for tag in movie.tag_set.all %} <a href="{% url 'movies:tag_detail' tag.id %}">{{ tag.tag_name }}</a> &nbsp; {% endfor %}</h5>
-            </div><br>
-        {% endfor %}
-    {% else %}
-        <p>No movies are available</p>
-    {% endif %}
+    
+    <div class="item-c">
+        {% if movies_list %}
+        
+            {% for movie in movies_list %}
+                <div id="title" class="titlecard">
+                    <h2><a href="{% url 'movies:movie_detail' movie.id %}">{{ movie.movie_title }}</a> <small>({{ movie.release_date.year }})</small></h2>
+                    <h5>Tags: &nbsp; {% for tag in movie.tag_set.all %} <a href="{% url 'movies:tag_detail' tag.id %}">{{ tag.tag_name }}</a> &nbsp; {% endfor %}</h5>
+                </div><br>
+            {% endfor %}
+        {% else %}
+            <p>No movies are available</p>
+        {% endif %}
+    </div>
 
 
     <script src="{% static 'functions.js' %}"></script>

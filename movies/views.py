@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect, Http404
 from django.urls import reverse
 from django.views import generic
+from django.db.models import Q
 
 from .models import Movie, Tag, Actor
 
@@ -27,3 +28,20 @@ class TagIndexView(generic.ListView):
 class TagDetailView(generic.DetailView):
     model = Tag
     template_name = 'movies/tag_detail.html'
+
+class SearchResults(generic.ListView):
+    paginate_by = 10
+    
+    def get_queryset(self):
+        result = super(SearchResults, self).get_queryset()
+
+        query = self.request.GET.get('q')
+        if query:
+            query_list = query.split()
+            result = result.filter(
+                reduce(operator.and_,
+                (Q(title__icontains=q) for q in query_list)) |
+                reduce(operator.and__,
+                (Q(content__icontains=q) for q in query_list))
+            )
+        return result

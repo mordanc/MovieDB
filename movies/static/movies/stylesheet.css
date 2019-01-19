@@ -24,7 +24,35 @@ li {
     list-style-type:circle;
 }
 
+.item-a {
+    grid-area: header;
+}
+.item-b {
+    grid-area: main;
+}
+.item-c {
+    grid-area: sidebar;
+}
+.item-d {
+    grid-area: footer;
+}
 
+.container {
+    display: inline-grid;
+    grid-template-columns: 200px 200px 200px 200px;
+    grid-template-rows: auto;
+    grid-gap: 20px 20px;
+    grid-template-areas:
+        "header header header header"
+        "sidebar main main . "
+        "footer footer footer foooter"
+}
+
+.titlecard {
+    border-radius: 15px 15px 15px 15px;
+    padding: 6px 12px;
+    border: 1px solid #53a1b3;
+}
 
 .web-name {
     color: #e96c4c;
