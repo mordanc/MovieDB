@@ -21,3 +21,14 @@ function openTab(evt, cityName) {
     document.getElementById(cityName).style.display = "block";
     evt.currentTarget.className += " active";
   }
+function fixNavbar() {
+  let navbar = document.getElementById("navbar-fixed");
+  let sticky = navbar.offsetTop;
+
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky");
+  }
+  else {
+    navbar.classList.remove("sticky");
+  }
+}

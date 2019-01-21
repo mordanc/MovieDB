@@ -17,14 +17,19 @@
     <header>
         <h1 class="web-name">Film Focus</h1>
     </header>
-    <nav>
+
+    <div id="navbar-fixed">
         <a href="{% url 'movies:movie_index' %}">Home</a> &nbsp;
         <a href="{% url 'movies:movie_index' %}">Movies</a> &nbsp;
         <a href="{% url 'movies:tag_index' %}">Tags</a> &nbsp;
-        <input type="button" style="float: right;" value="Search">
-        <input type="search" style="float: right;">
-
-    </nav>
+        <button style="float: right;">Search</button>
+        <input type="text" style="float: right;
+            padding: 6px;
+            border: none;
+            margin-top: 8px;
+            margin-right: 16px;
+            font-size: 14px;">
+    </div>
     <hr>
 
     <h1>Tags</h1>

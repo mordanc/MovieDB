@@ -6,13 +6,52 @@
 }
 body {
     font-family: 'Source Sans Pro', sans-serif;
-    background-color: rgb(31,32,33);
+    background-color: #141e24;
     color: #53a1b3;
     max-width: 40em;
     margin: 0 auto;
     padding: 1em;
 }
-
+.sticky {
+    position: fixed;
+    top: 0;
+}
+#navbar-fixed {
+    
+    overflow: hidden;
+    border: 1px solid #53a1b3;
+    background-color: #141e24;
+    color: #53a1b3;
+    margin-top: 3px;
+    
+}
+#navbar-fixed button {
+    background-color: inherit;
+    color: lightgrey;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+    text-decoration: none;
+}
+#navbar-fixed a {
+    background-color: inherit;
+    color: lightgrey;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+    text-decoration: none;
+}
+#navbar-fixed a:hover {
+    background-color: #53a1b3;;
+}
 a:link {
     color: #53a1b3;
 }
@@ -63,38 +102,38 @@ li {
 
 /* Style the tab */
 .tab {
-overflow: hidden;
-border: 1px solid #53a1b3;
-background-color: #141e24;
+    overflow: hidden;
+    border: 1px solid #53a1b3;
+    background-color: #141e24;
 }
 
 /* Style the buttons inside the tab */
 .tab button {
-background-color: inherit;
-color: lightgrey;
-float: left;
-border: none;
-outline: none;
-cursor: pointer;
-padding: 14px 16px;
-transition: 0.3s;
-font-size: 17px;
+    background-color: inherit;
+    color: lightgrey;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
 }
 
 /* Change background color of buttons on hover */
 .tab button:hover {
-background-color: #53a1b3;
+    background-color: #53a1b3;
 }
 
 /* Create an active/current tablink class */
 .tab button.active {
-background-color: #53a1b3;
+    background-color: #53a1b3;
 }
 
 /* Style the tab content */
 .tabcontent {
-display: none;
-padding: 6px 12px;
-border: 1px solid #53a1b3;
-border-top: none;
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #53a1b3;
+    border-top: none;
 }

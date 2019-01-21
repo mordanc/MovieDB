@@ -14,14 +14,21 @@
     <header>
         <h1 class="web-name">Film Focus</h1>
     </header>
-    <nav>
-        <a href="{% url 'movies:movie_index' %}">Home</a> &nbsp;
-        <a href="{% url 'movies:movie_index' %}">Movies</a> &nbsp;
-        <a href="{% url 'movies:tag_index' %}">Tags</a> &nbsp;
-        <button style="float: right; background-color: rgb(31,32,33); color: #53a1b3; cursor: pointer;">Search</button>
-        <input type="search" style="float: right; background-color: rgb(31,32,33); color: #53a1b3; border: 1px solid #53a1b3;">
 
-    </nav>
+    <div id="navbar-fixed">
+        <button>Home</button> &nbsp;
+        <button>Movies</button> &nbsp;
+        <button>Actors</button> &nbsp;
+        <button>Tags</button> &nbsp;
+        
+        <button style="float: right;">Search</button>
+        <input type="text" style="float: right;
+        padding: 6px;
+        border: none;
+        margin-top: 8px;
+        margin-right: 16px;
+        font-size: 14px;">
+    </div>
     <hr>
 
    
