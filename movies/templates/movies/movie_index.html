@@ -8,10 +8,13 @@
 
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
     <link href="{% static 'movies/stylesheet.css' %}" rel="stylesheet" type="text/css">
+    <style>
+        
+    </style>
 </head>
 
-<body class="container">
-    <header class="item-a">
+<body>
+    <header>
         <h1 class="web-name">Film Focus</h1>
     
     <nav>
@@ -19,18 +22,20 @@
         <a href="{% url 'movies:movie_index' %}">Movies</a> &nbsp;
         <a href="{% url 'movies:tag_index' %}">Tags</a> &nbsp;
 
-        <form id="searchform" action="{% url 'movies:search_results' %}" method="GET" accept-charset="utf-8">
-                <button class="searchbutton" type="submit" style="float: right; background-color: rgb(31,32,33); color: #53a1b3; cursor: pointer;">Search</button>
-                <input class="searchfield" id="searchbox" name="q" type="text" id="search_bar"
-                    placeholder="Search..." style="float: right; background-color: rgb(31,32,33); color: #53a1b3; border: 1px solid #53a1b3;">
-        </form>
+        
+        <button class="searchbutton" type="submit" style="float: right; background-color: rgb(31,32,33); color: #53a1b3; cursor: pointer;">Search</button>
+        <input class="searchfield" id="searchbox" name="q" type="text" id="search_bar"
+            placeholder="Search..." style="float: right; background-color: rgb(31,32,33); color: #53a1b3; border: 1px solid #53a1b3;">
+        
 
-    </nav>
+    
+        </nav>
+        <hr>
 </header>
-    <hr>
     
     
-    <div class="item-c">
+    
+    <div>
         {% if movies_list %}
         
             {% for movie in movies_list %}

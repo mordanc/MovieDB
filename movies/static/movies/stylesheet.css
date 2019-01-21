@@ -1,3 +1,9 @@
+
+.titlecard {
+    border-radius: 15px 15px 15px 15px;
+    padding: 6px 12px;
+    border: 1px solid #53a1b3;
+}
 body {
     font-family: 'Source Sans Pro', sans-serif;
     background-color: rgb(31,32,33);
@@ -45,14 +51,11 @@ li {
     grid-template-areas:
         "header header header header"
         "sidebar main main . "
-        "footer footer footer foooter"
+        "footer footer footer foooter";
 }
 
-.titlecard {
-    border-radius: 15px 15px 15px 15px;
-    padding: 6px 12px;
-    border: 1px solid #53a1b3;
-}
+
+
 
 .web-name {
     color: #e96c4c;
