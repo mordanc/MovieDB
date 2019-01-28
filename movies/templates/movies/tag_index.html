@@ -6,32 +6,36 @@
     <title>Film Focus</title>
     <meta charset="utf-8">
 
-
-
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" 
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link href="{% static 'movies/stylesheet.css' %}" rel="stylesheet" type="text/css">
-
 </head>
 
 <body>
+
     <header>
-        <h1 class="web-name">Film Focus</h1>
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark" style="background-color: #141e24;">
+            <div class="container">
+                <a href="{% url 'movies:movie_index' %}" class="navbar-brand">FilmFocus</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a href="{% url 'movies:movie_index' %}" class="nav-link">Home</a></li>
+                        <li class="nav-item"><a href="{% url 'movies:movie_index' %}" class="nav-link">Movies</a></li>
+                        <li class="nav-item active"><a href="{% url 'movies:tag_index' %}" class="nav-link">Tags</a></li>
+                    </ul>
+                </div>
+                    <form class="form-inline">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+            </div>
+        </nav>
     </header>
+    <br>
 
-    <div id="navbar-fixed">
-        <a href="{% url 'movies:movie_index' %}">Home</a> &nbsp;
-        <a href="{% url 'movies:movie_index' %}">Movies</a> &nbsp;
-        <a href="{% url 'movies:tag_index' %}">Tags</a> &nbsp;
-        <button style="float: right;">Search</button>
-        <input type="text" style="float: right;
-            padding: 6px;
-            border: none;
-            margin-top: 8px;
-            margin-right: 16px;
-            font-size: 14px;">
-    </div>
-    <hr>
-
+<div class="container">
     <h1>Tags</h1>
 
     <ul>
@@ -42,6 +46,8 @@
 
 
 
+
+</div>
 
     <script src="{% static 'functions.js' %}"></script>
 
