@@ -1,17 +1,13 @@
-
 .titlecard {
     border-radius: 15px 15px 15px 15px;
     padding: 6px 12px;
     border: 1px solid #53a1b3;
 }
+
 body {
     font-family: 'Source Sans Pro', sans-serif;
     background-color: #26262B;
     color: #53a1b3;
-    /*
-    max-width: 40em;
-    margin: 0 auto;
-    */
     padding-top: 60px;
 }
 
@@ -27,73 +23,6 @@ a:hover {
 a:active {
     color: white;
 }
-/*
-#navbar-fixed {
-    
-    overflow: hidden;
-    border: 1px solid #53a1b3;
-    background-color: #141e24;
-    color: #53a1b3;
-    margin-top: 3px;
-    
-}
-#navbar-fixed button {
-    background-color: inherit;
-    color: lightgrey;
-    float: left;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 14px 16px;
-    transition: 0.3s;
-    font-size: 17px;
-    text-decoration: none;
-}
-#navbar-fixed a {
-    background-color: inherit;
-    color: lightgrey;
-    float: left;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 14px 16px;
-    transition: 0.3s;
-    font-size: 17px;
-    text-decoration: none;
-}
-#navbar-fixed a:hover {
-    background-color: #53a1b3;;
-}
-
-
-.item-a {
-    grid-area: header;
-}
-.item-b {
-    grid-area: main;
-}
-.item-c {
-    grid-area: sidebar;
-}
-.item-d {
-    grid-area: footer;
-}
-
-.container {
-    display: inline-grid;
-    grid-template-columns: 200px 200px 200px 200px;
-    grid-template-rows: auto;
-    grid-gap: 20px 20px;
-    grid-template-areas:
-        "header header header header"
-        "sidebar main main . "
-        "footer footer footer foooter";
-}
-
-.web-name {
-    color: #e96c4c;
-}
-
 /* Style the tab */
 .tab {
     overflow: hidden;

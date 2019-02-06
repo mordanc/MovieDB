@@ -1,4 +1,5 @@
 from django.urls import path
+from movies.views import HomepageView
 
 from . import views
 
@@ -8,5 +9,6 @@ urlpatterns = [
     path('<int:pk>/', views.MovieDetailView.as_view(), name='movie_detail'),
     path('tags/', views.TagIndexView.as_view(), name='tag_index'),
     path('tags/<int:pk>/', views.TagDetailView.as_view(), name='tag_detail'),
-    path('results/', views.SearchResults.as_view(), name='search_results')
+    path('search_results/', views.SearchResults, name='search_results'),
+    path('homepage/', views.HomepageView, name='homepage'),
 ]
